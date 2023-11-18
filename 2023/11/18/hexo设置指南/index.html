@@ -16,22 +16,22 @@
   <meta name="author" content="mirage">
   <meta name="keywords" content="">
   
-    <meta name="description" content="将数据写入 excel 表格用的是 xlrd 和 xlwt，由于需要频繁开关xls文件，不适合连续写入，建议 openpyxl 库，后续会进行更新。 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061# coding&#x3D;UTF">
+    <meta name="description" content="hexo的设置指南1. 安装可以使用npm一键安装脚本。 123456# 对于windows用户，直接去官网下载node.js，安装后设置pathhttps:&#x2F;&#x2F;nodejs.org&#x2F;en&#x2F;download# 对于Debian系的Linux，如Ubuntu，可以使用apt安装sudo apt install npm# 对于ArchLinux，可以使用pacman安装sudo pacman -Sy">
 <meta property="og:type" content="article">
-<meta property="og:title" content="写入excel表格">
-<meta property="og:url" content="http://example.com/2023/11/18/%E5%86%99%E5%85%A5excel%E8%A1%A8%E6%A0%BC/index.html">
+<meta property="og:title" content="hexo设置指南">
+<meta property="og:url" content="http://example.com/2023/11/18/hexo%E8%AE%BE%E7%BD%AE%E6%8C%87%E5%8D%97/index.html">
 <meta property="og:site_name" content="Mirage">
-<meta property="og:description" content="将数据写入 excel 表格用的是 xlrd 和 xlwt，由于需要频繁开关xls文件，不适合连续写入，建议 openpyxl 库，后续会进行更新。 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061# coding&#x3D;UTF">
+<meta property="og:description" content="hexo的设置指南1. 安装可以使用npm一键安装脚本。 123456# 对于windows用户，直接去官网下载node.js，安装后设置pathhttps:&#x2F;&#x2F;nodejs.org&#x2F;en&#x2F;download# 对于Debian系的Linux，如Ubuntu，可以使用apt安装sudo apt install npm# 对于ArchLinux，可以使用pacman安装sudo pacman -Sy">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-11-18T08:48:29.000Z">
-<meta property="article:modified_time" content="2023-11-18T08:49:51.521Z">
+<meta property="article:published_time" content="2023-11-18T10:43:38.000Z">
+<meta property="article:modified_time" content="2023-11-18T11:24:25.780Z">
 <meta property="article:author" content="mirage">
-<meta property="article:tag" content="python">
+<meta property="article:tag" content="hexo">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>写入excel表格 - Mirage</title>
+  <title>hexo设置指南 - Mirage</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -197,7 +197,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="写入excel表格"></span>
+            <span id="subtitle" data-typed-text="hexo设置指南"></span>
           
         </div>
 
@@ -208,8 +208,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-11-18 16:48" pubdate>
-          2023年11月18日 下午
+        <time datetime="2023-11-18 18:43" pubdate>
+          2023年11月18日 晚上
         </time>
       </span>
     
@@ -220,7 +220,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2.2k 字
+          1.8k 字
         
       </span>
     
@@ -231,7 +231,7 @@
         
         
         
-          19 分钟
+          16 分钟
         
       </span>
     
@@ -268,13 +268,47 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">写入excel表格</h1>
+            <h1 id="seo-header">hexo设置指南</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="将数据写入-excel-表格"><a href="#将数据写入-excel-表格" class="headerlink" title="将数据写入 excel 表格"></a>将数据写入 excel 表格</h1><p>用的是 xlrd 和 xlwt，由于需要频繁开关xls文件，不适合连续写入，建议 <strong>openpyxl</strong> 库，后续会进行更新。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># coding=UTF-8</span><br><span class="hljs-keyword">import</span> xlrd<br><span class="hljs-keyword">import</span> xlwt<br><span class="hljs-keyword">from</span> xlutils.copy <span class="hljs-keyword">import</span> copy<br> <br> <br><span class="hljs-keyword">def</span> <span class="hljs-title function_">write_excel_xls</span>(<span class="hljs-params">path, sheet_name, value</span>):<br>    index = <span class="hljs-built_in">len</span>(value)  <span class="hljs-comment"># 获取需要写入数据的行数</span><br>    workbook = xlwt.Workbook()  <span class="hljs-comment"># 新建一个工作簿</span><br>    sheet = workbook.add_sheet(sheet_name)  <span class="hljs-comment"># 在工作簿中新建一个表格</span><br>    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">0</span>, index):<br>        <span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">0</span>, <span class="hljs-built_in">len</span>(value[i])):<br>            sheet.write(i, j, value[i][j])  <span class="hljs-comment"># 像表格中写入数据（对应的行和列）</span><br>    workbook.save(path)  <span class="hljs-comment"># 保存工作簿</span><br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;xls格式表格写入数据成功！&quot;</span>)<br> <br> <br><span class="hljs-keyword">def</span> <span class="hljs-title function_">write_excel_xls_append</span>(<span class="hljs-params">path, value</span>):<br>    index = <span class="hljs-built_in">len</span>(value)  <span class="hljs-comment"># 获取需要写入数据的行数</span><br>    workbook = xlrd.open_workbook(path)  <span class="hljs-comment"># 打开工作簿</span><br>    sheets = workbook.sheet_names()  <span class="hljs-comment"># 获取工作簿中的所有表格</span><br>    worksheet = workbook.sheet_by_name(sheets[<span class="hljs-number">0</span>])  <span class="hljs-comment"># 获取工作簿中所有表格中的的第一个表格</span><br>    rows_old = worksheet.nrows  <span class="hljs-comment"># 获取表格中已存在的数据的行数</span><br>    new_workbook = copy(workbook)  <span class="hljs-comment"># 将xlrd对象拷贝转化为xlwt对象</span><br>    new_worksheet = new_workbook.get_sheet(<span class="hljs-number">0</span>)  <span class="hljs-comment"># 获取转化后工作簿中的第一个表格</span><br>    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">0</span>, index):<br>        <span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">0</span>, <span class="hljs-built_in">len</span>(value[i])):<br>            new_worksheet.write(i+rows_old, j, value[i][j])  <span class="hljs-comment"># 追加写入数据，注意是从i+rows_old行开始写入</span><br>    new_workbook.save(path)  <span class="hljs-comment"># 保存工作簿</span><br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;xls格式表格【追加】写入数据成功！&quot;</span>)<br> <br> <br><span class="hljs-keyword">def</span> <span class="hljs-title function_">read_excel_xls</span>(<span class="hljs-params">path</span>):<br>    workbook = xlrd.open_workbook(path)  <span class="hljs-comment"># 打开工作簿</span><br>    sheets = workbook.sheet_names()  <span class="hljs-comment"># 获取工作簿中的所有表格</span><br>    worksheet = workbook.sheet_by_name(sheets[<span class="hljs-number">0</span>])  <span class="hljs-comment"># 获取工作簿中所有表格中的的第一个表格</span><br>    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">0</span>, worksheet.nrows):<br>        <span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">0</span>, worksheet.ncols):<br>            <span class="hljs-built_in">print</span>(worksheet.cell_value(i, j), <span class="hljs-string">&quot;\t&quot;</span>, end=<span class="hljs-string">&quot;&quot;</span>)  <span class="hljs-comment"># 逐行逐列读取数据</span><br>        <span class="hljs-built_in">print</span>()<br> <br> <br>book_name_xls = <span class="hljs-string">&#x27;xls格式测试工作簿.xls&#x27;</span><br> <br>sheet_name_xls = <span class="hljs-string">&#x27;xls格式测试表&#x27;</span><br> <br>value_title = [[<span class="hljs-string">&quot;姓名&quot;</span>, <span class="hljs-string">&quot;性别&quot;</span>, <span class="hljs-string">&quot;年龄&quot;</span>, <span class="hljs-string">&quot;城市&quot;</span>, <span class="hljs-string">&quot;职业&quot;</span>],]<br> <br>value1 = [[<span class="hljs-string">&quot;张三&quot;</span>, <span class="hljs-string">&quot;男&quot;</span>, <span class="hljs-string">&quot;19&quot;</span>, <span class="hljs-string">&quot;杭州&quot;</span>, <span class="hljs-string">&quot;研发工程师&quot;</span>],<br>          [<span class="hljs-string">&quot;李四&quot;</span>, <span class="hljs-string">&quot;男&quot;</span>, <span class="hljs-string">&quot;22&quot;</span>, <span class="hljs-string">&quot;北京&quot;</span>, <span class="hljs-string">&quot;医生&quot;</span>],<br>          [<span class="hljs-string">&quot;王五&quot;</span>, <span class="hljs-string">&quot;女&quot;</span>, <span class="hljs-string">&quot;33&quot;</span>, <span class="hljs-string">&quot;珠海&quot;</span>, <span class="hljs-string">&quot;出租车司机&quot;</span>],]<br> <br>value2 = [[<span class="hljs-string">&quot;Tom&quot;</span>, <span class="hljs-string">&quot;男&quot;</span>, <span class="hljs-string">&quot;21&quot;</span>, <span class="hljs-string">&quot;西安&quot;</span>, <span class="hljs-string">&quot;测试工程师&quot;</span>],<br>          [<span class="hljs-string">&quot;Jones&quot;</span>, <span class="hljs-string">&quot;女&quot;</span>, <span class="hljs-string">&quot;34&quot;</span>, <span class="hljs-string">&quot;上海&quot;</span>, <span class="hljs-string">&quot;产品经理&quot;</span>],<br>          [<span class="hljs-string">&quot;Cat&quot;</span>, <span class="hljs-string">&quot;女&quot;</span>, <span class="hljs-string">&quot;56&quot;</span>, <span class="hljs-string">&quot;上海&quot;</span>, <span class="hljs-string">&quot;教师&quot;</span>],]<br> <br> <br>write_excel_xls(book_name_xls, sheet_name_xls, value_title)<br>write_excel_xls_append(book_name_xls, value1)<br>write_excel_xls_append(book_name_xls, value2)<br>read_excel_xls(book_name_xls)<br></code></pre></td></tr></table></figure>
+                <h1 id="hexo的设置指南"><a href="#hexo的设置指南" class="headerlink" title="hexo的设置指南"></a>hexo的设置指南</h1><h2 id="1-安装"><a href="#1-安装" class="headerlink" title="1. 安装"></a>1. 安装</h2><p>可以使用npm一键安装脚本。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 对于windows用户，直接去官网下载node.js，安装后设置path</span><br>https://nodejs.org/en/download<br><span class="hljs-comment"># 对于Debian系的Linux，如Ubuntu，可以使用apt安装</span><br>sudo apt install npm<br><span class="hljs-comment"># 对于ArchLinux，可以使用pacman安装</span><br>sudo pacman -Sy npm<br></code></pre></td></tr></table></figure>
+<p>安装hexo</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">npm install -g hexo-cli<br></code></pre></td></tr></table></figure>
+<p>确认安装完成，查看版本号</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><code class="hljs bash">hexo -v<br><span class="hljs-comment">#INFO  Validating config</span><br><span class="hljs-comment"># hexo: 6.3.0</span><br><span class="hljs-comment"># hexo-cli: 4.3.1</span><br><span class="hljs-comment"># os: win32 10.0.22631</span><br><span class="hljs-comment"># node: 20.9.0</span><br><span class="hljs-comment"># acorn: 8.10.0</span><br><span class="hljs-comment"># ada: 2.6.0</span><br><span class="hljs-comment"># ares: 1.19.1</span><br><span class="hljs-comment"># base64: 0.5.0</span><br><span class="hljs-comment"># brotli: 1.0.9</span><br><span class="hljs-comment"># cjs_module_lexer: 1.2.2</span><br><span class="hljs-comment"># cldr: 43.1</span><br><span class="hljs-comment"># icu: 73.2</span><br><span class="hljs-comment"># llhttp: 8.1.1</span><br><span class="hljs-comment"># modules: 115</span><br><span class="hljs-comment"># napi: 9</span><br><span class="hljs-comment"># nghttp2: 1.57.0</span><br><span class="hljs-comment"># nghttp3: 0.7.0</span><br><span class="hljs-comment"># ngtcp2: 0.8.1</span><br><span class="hljs-comment"># openssl: 3.0.10+quic</span><br><span class="hljs-comment"># simdutf: 3.2.17</span><br><span class="hljs-comment"># tz: 2023c</span><br><span class="hljs-comment"># undici: 5.26.3</span><br><span class="hljs-comment"># unicode: 15.0</span><br><span class="hljs-comment"># uv: 1.46.0</span><br><span class="hljs-comment"># uvwasi: 0.0.18</span><br><span class="hljs-comment"># v8: 11.3.244.8-node.16</span><br><span class="hljs-comment"># zlib: 1.2.13.1-motley</span><br></code></pre></td></tr></table></figure>
+<h1 id="2-创建项目hexo并初始化"><a href="#2-创建项目hexo并初始化" class="headerlink" title="2. 创建项目hexo并初始化"></a>2. 创建项目<strong>hexo</strong>并初始化</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">hexo init hexo<br><span class="hljs-built_in">cd</span> hexo<br>npm install<br></code></pre></td></tr></table></figure>
+<h1 id="3-本地启动"><a href="#3-本地启动" class="headerlink" title="3. 本地启动"></a>3. 本地启动</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">hexo g //hexo generate<br>hexo server<br></code></pre></td></tr></table></figure>
+<p>本地服务启动，端口号是4000，打开浏览器输入</p>
+<figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs dts"><span class="hljs-symbol">http:</span><span class="hljs-comment">//localhost:4000</span><br></code></pre></td></tr></table></figure>
+<h1 id="4-更换主题"><a href="#4-更换主题" class="headerlink" title="4. 更换主题"></a>4. 更换主题</h1><p>主题可以从<a target="_blank" rel="noopener" href="https://hexo.io/themes/">官网</a>找自己喜欢的。本文以<strong>Next</strong>为例。</p>
+<p>安装主题,在根目录下面的themes文件夹中,将克隆的文件放到&#x2F;themes&#x2F;next文件夹中。</p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs vim"><span class="hljs-keyword">cd</span> hexo-blog<br>git clone https://github.<span class="hljs-keyword">com</span>/<span class="hljs-keyword">next</span>-theme/hexo-theme-<span class="hljs-keyword">next</span>.git themes/<span class="hljs-keyword">next</span><br></code></pre></td></tr></table></figure>
+
+<p>从根目录找到_config.yml文件，在文件中找到<strong>theme</strong>字段，修改为<strong>next</strong>。</p>
+<figure class="highlight autoit"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs autoit"><span class="hljs-meta"># theme: landscape</span><br>theme: <span class="hljs-keyword">next</span><br></code></pre></td></tr></table></figure>
+<p>本地启动，进行测试。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">hexo g //hexo generate<br>hexo server<br></code></pre></td></tr></table></figure>
+<h1 id="5-创建文章"><a href="#5-创建文章" class="headerlink" title="5.创建文章"></a>5.创建文章</h1><p>打开根目录中的 _config.yml进行确认，为了在生成文章的时候生成一个同名的资源目录用于存放图片文件</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">post_asset_folder:</span> <span class="hljs-literal">true</span><br></code></pre></td></tr></table></figure>
+<p>使用如下命令，创建一篇新文章，名为“test”</p>
+<figure class="highlight haxe"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs haxe">hexo <span class="hljs-keyword">new</span> <span class="hljs-type">post</span> test<br></code></pre></td></tr></table></figure>
+
+<p>关于图片的引用，可参考<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/asset-folders.html">官方文档</a></p>
+<p>下面给出了三种引用方式：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-meta">---</span><br><span class="hljs-attr">title:</span> <span class="hljs-string">test</span><br><span class="hljs-attr">date:</span> <span class="hljs-number">2023-11-18 19:14:26</span><br><span class="hljs-attr">tags:</span><br><span class="hljs-bullet">-</span> <span class="hljs-string">test</span><br><span class="hljs-meta">---</span><br><span class="hljs-meta"></span><br><span class="hljs-string">This</span> <span class="hljs-string">paper</span> <span class="hljs-string">is</span> <span class="hljs-string">used</span> <span class="hljs-string">for</span> <span class="hljs-string">testing.</span><br><br>&#123;<span class="hljs-string">%</span> <span class="hljs-string">asset_img</span> <span class="hljs-string">test.png</span> <span class="hljs-string">图片引用方法一</span> <span class="hljs-string">%</span>&#125;<br><br><span class="hljs-type">![</span><span class="hljs-string">图片引用方法二](test.png)</span><br><br><span class="hljs-type">![</span><span class="hljs-string">图片引用方法三](/images/test.png)</span><br></code></pre></td></tr></table></figure>
+
+<h1 id="6-页面细节改动"><a href="#6-页面细节改动" class="headerlink" title="6. 页面细节改动"></a>6. 页面细节改动</h1><p>页面的细节改动，主要从_config.yml文件中进行修改。具体的自定义修改可查看<a target="_blank" rel="noopener" href="https://hexo.io/docs/">官方文档</a></p>
+<h1 id="7-发布到githubPages"><a href="#7-发布到githubPages" class="headerlink" title="7.发布到githubPages"></a>7.发布到githubPages</h1><p>安装hexo-deployer-git</p>
+<figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ada">npm install hexo-deployer-git <span class="hljs-comment">--save</span><br></code></pre></td></tr></table></figure>
+<p>修改_config.yml文件，配置github信息</p>
+<figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs dts"><span class="hljs-symbol">deploy:</span><br><span class="hljs-symbol">    type:</span> git<br><span class="hljs-symbol">    repo:</span> https:<span class="hljs-comment">//github.com/your-github-id/your-github-id.github.io.git</span><br><span class="hljs-symbol">    branch:</span> main<br><span class="hljs-symbol">    token:</span> (githubPagesToken)<br></code></pre></td></tr></table></figure>
+<p>token需要从GitHub获取，并授予token管理库的权限。<br>设置完毕后，执行部署命令</p>
+<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ebnf"><span class="hljs-attribute">hexo g -d</span><br></code></pre></td></tr></table></figure>
+<p>建议先本地测试，再进行部署</p>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs scss">hexo clean<br>hexo <span class="hljs-built_in">g</span>(enerate)<br>hexo <span class="hljs-built_in">s</span>(erver)<br># 本地测试通过后<br>hexo <span class="hljs-built_in">d</span>(eploy)<br></code></pre></td></tr></table></figure>
 
                 
               </div>
@@ -287,7 +321,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/python/" class="print-no-link">#python</a>
+        <a href="/tags/hexo/" class="print-no-link">#hexo</a>
       
     </div>
   
@@ -299,8 +333,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>写入excel表格</div>
-      <div>http://example.com/2023/11/18/写入excel表格/</div>
+      <div>hexo设置指南</div>
+      <div>http://example.com/2023/11/18/hexo设置指南/</div>
     </div>
     <div class="license-meta">
       
@@ -344,18 +378,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/11/18/hexo%E8%AE%BE%E7%BD%AE%E6%8C%87%E5%8D%97/" title="hexo设置指南">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">hexo设置指南</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/11/18/%E5%AE%9E%E9%AA%8C%E8%AE%A1%E6%97%B6%E5%99%A8/" title="实验计时器">
-                        <span class="hidden-mobile">实验计时器</span>
+                      <a href="/2023/11/18/%E5%86%99%E5%85%A5excel%E8%A1%A8%E6%A0%BC/" title="写入excel表格">
+                        <span class="hidden-mobile">写入excel表格</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
