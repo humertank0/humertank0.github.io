@@ -24,11 +24,13 @@
 <meta property="og:description" content="有些时候，我们希望通过堆分配的指针可以被自动释放，而不是手动delete,这种时候，有一种方法就是使用作用域指针。 作用域指针，本质上是一个类。是一个指针的包装器，在构造时分配指针，在析构时删除指针。我们可以自动化new和delete关键字。 首先来演示一下手动管理的指针：123456789101112#include&lt;iostream&gt;class Entity&amp;#123;public">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-12-03T06:40:13.000Z">
-<meta property="article:modified_time" content="2023-12-03T07:08:36.377Z">
+<meta property="article:modified_time" content="2023-12-03T07:09:55.055Z">
 <meta property="article:author" content="mirage">
 <meta property="article:tag" content="c++">
 <meta name="twitter:card" content="summary_large_image">
   
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
   
   
   <title>作用域指针 - Mirage</title>
@@ -220,7 +222,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          913 字
+          909 字
         
       </span>
     
@@ -284,7 +286,7 @@
 <p>输出为：</p>
 <figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmd">Constructed Entity!<br></code></pre></td></tr></table></figure>
 
-<p>可以看到，在**{}**内运行完毕后，指针并没有被释放，没有进行析构。</p>
+<p>可以看到，在{}内运行完毕后，指针并没有被释放，没有进行析构。</p>
 <h3 id="添加一个作用域指针的类"><a href="#添加一个作用域指针的类" class="headerlink" title="添加一个作用域指针的类"></a>添加一个作用域指针的类</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-keyword">class</span> <span class="hljs-title class_">ScopePtr</span><br>&#123;<br><span class="hljs-keyword">private</span>:<br>    Entity* m_Ptr;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-built_in">ScopePtr</span>(Entity* ptr) :<span class="hljs-built_in">m_Ptr</span>(ptr)<br>    &#123;<br>    &#125;;<br>    ~<span class="hljs-built_in">ScopePtr</span>()<br>    &#123;<br>        <span class="hljs-keyword">delete</span> m_Ptr;<br>    &#125;;<br><br>&#125;;<br></code></pre></td></tr></table></figure>
 
 <p>通过这个类来生成Entity示例。</p>
@@ -475,6 +477,30 @@
     </div>
   
   
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="busuanzi_container_site_pv" style="display: none">
+        总访问量 
+        <span id="busuanzi_value_site_pv"></span>
+         次
+      </span>
+    
+    
+      <span id="busuanzi_container_site_uv" style="display: none">
+        总访客数 
+        <span id="busuanzi_value_site_uv"></span>
+         人
+      </span>
+    
+    
+  
+</div>
+
+  
   
   
 </div>
@@ -620,6 +646,8 @@
   <script>Fluid.plugins.imageCaption();</script>
 
   <script  src="/js/local-search.js" ></script>
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
 
 
 
