@@ -226,6 +226,46 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h2 class="index-header">
         
+        <a href="/2023/12/03/%E4%BD%9C%E7%94%A8%E5%9F%9F%E6%8C%87%E9%92%88/" target="_self">
+          作用域指针
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/12/03/%E4%BD%9C%E7%94%A8%E5%9F%9F%E6%8C%87%E9%92%88/" target="_self">
+        <div>
+          有些时候，我们希望通过堆分配的指针可以被自动释放，而不是手动delete,这种时候，有一种方法就是使用作用域指针。 作用域指针，本质上是一个类。是一个指针的包装器，在构造时分配指针，在析构时删除指针。我们可以自动化new和delete关键字。 首先来演示一下手动管理的指针：123456789101112#include&lt;iostream&gt;class Entity&#123;public
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-12-03 14:40" pubdate>
+              2023-12-03
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/c/">#c++</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
         <a href="/2023/12/02/%E8%A1%A8%E8%BE%BE%E5%BC%8F/" target="_self">
           Lambda表达式
         </a>
@@ -234,7 +274,7 @@
       
       <a class="index-excerpt index-excerpt__noimg" href="/2023/12/02/%E8%A1%A8%E8%BE%BE%E5%BC%8F/" target="_self">
         <div>
-          Lambda 表达式是 C++11 引入的一项功能，它允许你在代码中直接定义匿名函数。Lambda 表达式的主要优势是能够轻松地创建临时的、简短的函数，而无需显式地声明函数的名称。 一个基本的 Lambda 表达式的语法形式如下： 123cppCopy code[capture](parameters) -&gt; return_type &#123;    // 函数体&#125;  其中：
+          Lambda 表达式是 C++11 引入的一项功能，它允许你在代码中直接定义匿名函数。 Lambda 表达式的主要优势是能够轻松地创建临时的、简短的函数，而无需显式地声明函数的名称。 一个基本的 Lambda 表达式的语法形式如下： 123cppCopy code[capture](parameters) -&gt; return_type &#123;    // 函数体&#125;  其中：
         </div>
       </a>
 
