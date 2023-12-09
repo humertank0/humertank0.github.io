@@ -16,27 +16,26 @@
   <meta name="author" content="mirage">
   <meta name="keywords" content="">
   
-    <meta name="description" content="std::vector 是 C++ 标准库中的一个动态数组容器，提供了动态大小的数组，并支持在数组的末尾高效地添加和删除元素。std::vector 是一个非常常用的容器，它的特性包括：  动态大小： std::vector 内部使用动态内存分配，可以根据需要自动调整容器的大小，避免了静态数组大小固定的限制。 连续内存： std::vector 中的元素在内存中是连续存储的，这使得对元素的访问和迭">
+    <meta name="description" content="今天在写类的时候，遇到了内存泄露问题，原因是没有写虚析构函数，导致内存无法释放。 虚析构函数是一个在 C++ 中的重要概念，用于正确地释放多态类对象的资源。虚析构函数通常在基类中声明，并在继承类中进行实现。当通过基类指针或引用删除一个派生类对象时，使用虚析构函数可以确保正确调用派生类的析构函数，从而释放所有相关资源。 具体实现如下： 12345678910111213141516171819202">
 <meta property="og:type" content="article">
-<meta property="og:title" content="vector使用优化">
-<meta property="og:url" content="http://humertank0.github.io/2023/12/05/vector%E4%BD%BF%E7%94%A8%E4%BC%98%E5%8C%96/index.html">
+<meta property="og:title" content="虚析构函数">
+<meta property="og:url" content="http://humertank0.github.io/2023/12/09/%E8%99%9A%E6%9E%90%E6%9E%84%E5%87%BD%E6%95%B0/index.html">
 <meta property="og:site_name" content="Mirage">
-<meta property="og:description" content="std::vector 是 C++ 标准库中的一个动态数组容器，提供了动态大小的数组，并支持在数组的末尾高效地添加和删除元素。std::vector 是一个非常常用的容器，它的特性包括：  动态大小： std::vector 内部使用动态内存分配，可以根据需要自动调整容器的大小，避免了静态数组大小固定的限制。 连续内存： std::vector 中的元素在内存中是连续存储的，这使得对元素的访问和迭">
+<meta property="og:description" content="今天在写类的时候，遇到了内存泄露问题，原因是没有写虚析构函数，导致内存无法释放。 虚析构函数是一个在 C++ 中的重要概念，用于正确地释放多态类对象的资源。虚析构函数通常在基类中声明，并在继承类中进行实现。当通过基类指针或引用删除一个派生类对象时，使用虚析构函数可以确保正确调用派生类的析构函数，从而释放所有相关资源。 具体实现如下： 12345678910111213141516171819202">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://cdn.statically.io/gh/humertank0/picx-images-hosting@master/20231205/image.8ydyq54fgm4.png">
-<meta property="article:published_time" content="2023-12-05T07:52:45.000Z">
-<meta property="article:modified_time" content="2023-12-05T10:04:31.068Z">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/humertank0/picx-images-hosting@master/20231209/b4c69d4d-d2a1-47b7-a7f6-a9fac2bc4b9c.1z240maihgo0.webp">
+<meta property="article:published_time" content="2023-12-09T11:28:00.000Z">
+<meta property="article:modified_time" content="2023-12-09T12:09:50.220Z">
 <meta property="article:author" content="mirage">
 <meta property="article:tag" content="c++">
-<meta property="article:tag" content="优化">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://cdn.statically.io/gh/humertank0/picx-images-hosting@master/20231205/image.8ydyq54fgm4.png">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/humertank0/picx-images-hosting@master/20231209/b4c69d4d-d2a1-47b7-a7f6-a9fac2bc4b9c.1z240maihgo0.webp">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>vector使用优化 - Mirage</title>
+  <title>虚析构函数 - Mirage</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -202,7 +201,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="vector使用优化"></span>
+            <span id="subtitle" data-typed-text="虚析构函数"></span>
           
         </div>
 
@@ -213,8 +212,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-12-05 15:52" pubdate>
-          2023年12月5日 下午
+        <time datetime="2023-12-09 19:28" pubdate>
+          2023年12月9日 晚上
         </time>
       </span>
     
@@ -225,7 +224,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2.6k 字
+          2.2k 字
         
       </span>
     
@@ -236,7 +235,7 @@
         
         
         
-          22 分钟
+          19 分钟
         
       </span>
     
@@ -273,42 +272,19 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">vector使用优化</h1>
+            <h1 id="seo-header">虚析构函数</h1>
             
             
               <div class="markdown-body">
                 
-                <p><code>std::vector</code> 是 C++ 标准库中的一个动态数组容器，提供了动态大小的数组，并支持在数组的末尾高效地添加和删除元素。<code>std::vector</code> 是一个非常常用的容器，它的特性包括：</p>
-<ol>
-<li><strong>动态大小：</strong> <code>std::vector</code> 内部使用动态内存分配，可以根据需要自动调整容器的大小，避免了静态数组大小固定的限制。</li>
-<li><strong>连续内存：</strong> <code>std::vector</code> 中的元素在内存中是连续存储的，这使得对元素的访问和迭代效率较高。</li>
-<li><strong>随机访问：</strong> 支持通过下标或迭代器对元素进行随机访问。通过 <code>at()</code> 或 <code>operator[]</code> 可以访问指定位置的元素。</li>
-<li><strong>尾部插入和删除：</strong> 提供了 <code>push_back()</code> 和 <code>pop_back()</code> 方法，可以在尾部高效地添加和删除元素。</li>
-<li><strong>动态内存管理：</strong> <code>std::vector</code> 会自动管理内存的分配和释放，不需要手动处理内存分配问题。</li>
-<li><strong>大小和容量：</strong> 提供 <code>size()</code> 方法获取当前元素个数，提供 <code>capacity()</code> 方法获取当前容器的容量。</li>
-</ol>
-<h3 id="通常的使用情况是这样"><a href="#通常的使用情况是这样" class="headerlink" title="通常的使用情况是这样"></a>通常的使用情况是这样</h3><p>创建一个vector，开始push_back元素，对vector进行调整。如果vector的容量较小，在添加新的元素的时候，vector会进行扩容。将vector内的元素复制一遍，添加到新的大容量的vector中，然后释放旧的vector所占用的内存。</p>
-<p>如果预分配的容量用完，当我们puch_back一个新的元素时，vector就会重新分配，涉及到内存的再分配和清除，这样无疑拖慢了代码速度。</p>
-<p>举例说明：</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;vector&gt;</span></span><br><br><span class="hljs-keyword">struct</span> <span class="hljs-title class_">Vector</span><br>&#123;<br>    <span class="hljs-type">float</span> x, y, z;<br><br>    <span class="hljs-built_in">Vector</span>(<span class="hljs-type">float</span> a, <span class="hljs-type">float</span> b, <span class="hljs-type">float</span> c) :<br>        <span class="hljs-built_in">x</span>(a), <span class="hljs-built_in">y</span>(b), <span class="hljs-built_in">z</span>(c) <br>    &#123;<br>    &#125;<br><br>    <span class="hljs-built_in">Vector</span>(<span class="hljs-type">const</span> Vector&amp; other) :<br>        <span class="hljs-built_in">x</span>(other.x),<span class="hljs-built_in">y</span>(other.y),<span class="hljs-built_in">z</span>(other.z)<br>    &#123;<br>        std::cout &lt;&lt; <span class="hljs-string">&quot;Copy operation!&quot;</span> &lt;&lt; std::endl;<br>    &#125;<br>&#125;;<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br><br>    std::vector&lt;Vector&gt; vec;<br>    vec.<span class="hljs-built_in">push_back</span>(&#123; <span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span> &#125;);<br>    vec.<span class="hljs-built_in">push_back</span>(&#123; <span class="hljs-number">4</span>,<span class="hljs-number">5</span>,<span class="hljs-number">6</span> &#125;);<br><br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
-
-<p>在上述程序中，我们修改了默认的拷贝构造函数，当vector中的元素进行拷贝后，会输出”Copy operation!”。输出结果如下：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs bash">Copy operation!<br>Copy operation!<br>Copy operation!<br><br>D:\Code Learning\cpp\practice\practice\x64\Debug\practice.exe (进程 37752)已退出，代码为 0。<br>要在调试停止时自动关闭控制台，请启用“工具”-&gt;“选项”-&gt;“调试”-&gt;“调试停止时自动关闭控制台”。<br>按任意键关闭此窗口. . .<br></code></pre></td></tr></table></figure>
-
-<p>可以看到执行了三次拷贝操作。首先是{1，2，3}的元素从main栈中拷贝到实际的vector中，然后是第二个元素{4，5，6}从main栈中拷贝到实际的vector中，执行了第二次拷贝操作。由于vector进行扩容操作，又拷贝了第一个元素{1，2，3}，因此总共执行了三次拷贝操作。</p>
-<h3 id="这其中存在的问题："><a href="#这其中存在的问题：" class="headerlink" title="这其中存在的问题："></a>这其中存在的问题：</h3><p>当插入一个元素时，扩容会消耗一定时间。当从空集开始，连续插入几个元素时，vector会进行频繁扩容。因此，如果能够在进行一系列插入操作之前先预先扩容或者安排好插入的空间，会节省一些时间。<strong>因此，第一个改进方向就是在已知插入元素数量的情况下，预先分配好空间。</strong></p>
-<p>首先说明下改进前的版本：</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;vector&gt;</span></span><br><br><span class="hljs-keyword">struct</span> <span class="hljs-title class_">Vector</span><br>&#123;<br>    <span class="hljs-type">float</span> x, y, z;<br><br>    <span class="hljs-built_in">Vector</span>(<span class="hljs-type">float</span> a, <span class="hljs-type">float</span> b, <span class="hljs-type">float</span> c) :<br>        <span class="hljs-built_in">x</span>(a), <span class="hljs-built_in">y</span>(b), <span class="hljs-built_in">z</span>(c) &#123;<br><br>    &#125;<br><br>    <span class="hljs-built_in">Vector</span>(<span class="hljs-type">const</span> Vector&amp; other) :<br>        <span class="hljs-built_in">x</span>(other.x),<span class="hljs-built_in">y</span>(other.y),<span class="hljs-built_in">z</span>(other.z)<br>    &#123;<br>        std::cout &lt;&lt; <span class="hljs-string">&quot;Copy operation!&quot;</span> &lt;&lt; std::endl;<br>    &#125;<br>&#125;;<br><br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br><br>    std::vector&lt;Vector&gt; vec;<br>    vec.<span class="hljs-built_in">push_back</span>(Vector&#123; <span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span> &#125;);<br>    vec.<span class="hljs-built_in">push_back</span>(Vector&#123; <span class="hljs-number">4</span>,<span class="hljs-number">5</span>,<span class="hljs-number">6</span> &#125;);<br>    vec.<span class="hljs-built_in">push_back</span>(Vector&#123; <span class="hljs-number">7</span>,<span class="hljs-number">8</span>,<span class="hljs-number">9</span> &#125;);<br><br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
-
-<p>在上述情况下，会发生6次拷贝操作。</p>
-<p>当我们预先分配3个空间后：</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br><br>    std::vector&lt;Vector&gt; vec;<br>    vec.<span class="hljs-built_in">reserve</span>(<span class="hljs-number">3</span>);<span class="hljs-comment">//提前分配</span><br>    vec.<span class="hljs-built_in">push_back</span>(Vector&#123; <span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span> &#125;);<br>    vec.<span class="hljs-built_in">push_back</span>(Vector&#123; <span class="hljs-number">4</span>,<span class="hljs-number">5</span>,<span class="hljs-number">6</span> &#125;);<br>    vec.<span class="hljs-built_in">push_back</span>(Vector&#123; <span class="hljs-number">7</span>,<span class="hljs-number">8</span>,<span class="hljs-number">9</span> &#125;);<br><br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
-
-<p>只会发生3次拷贝操作。</p>
-<p>除此之外，若是不调用默认的拷贝构造函数，则会节省更多的时间开销。<strong>因此，第二个改进就是传递参数构造，不使用拷贝构造函数。</strong></p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br><br>    std::vector&lt;Vector&gt; vec;<br>    vec.<span class="hljs-built_in">reserve</span>(<span class="hljs-number">3</span>);<br>    vec.<span class="hljs-built_in">emplace_back</span>(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>);<br>    vec.<span class="hljs-built_in">emplace_back</span>(<span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>);<br>    vec.<span class="hljs-built_in">emplace_back</span>(<span class="hljs-number">7</span>, <span class="hljs-number">8</span>, <span class="hljs-number">9</span>);<br><br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br></code></pre></td></tr></table></figure>
-
-<p>若使用<strong>emplace_back</strong>，则最终的拷贝操作次数为0。</p>
+                <p>今天在写类的时候，遇到了内存泄露问题，原因是没有写虚析构函数，导致内存无法释放。</p>
+<p>虚析构函数是一个在 C++ 中的重要概念，用于正确地释放多态类对象的资源。虚析构函数通常在基类中声明，并在继承类中进行实现。当通过基类指针或引用删除一个派生类对象时，使用虚析构函数可以确保正确调用派生类的析构函数，从而释放所有相关资源。</p>
+<p>具体实现如下：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;iostream&gt;</span></span><br><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Base</span><br>&#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-built_in">Base</span>()<br>    &#123;<br>        std::cout &lt;&lt; <span class="hljs-string">&quot;Construct Base.\n&quot;</span>;<br>    &#125;;<br>    ~<span class="hljs-built_in">Base</span>()<br>    &#123;<br>        std::cout &lt;&lt; <span class="hljs-string">&quot;Destruct Base.\n&quot;</span>;<br>    &#125;;<br>&#125;;<br><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Derived</span>:<span class="hljs-keyword">public</span> Base<br>&#123;<br><span class="hljs-keyword">private</span>:<br>    <span class="hljs-type">int</span>* a = <span class="hljs-keyword">new</span> <span class="hljs-type">int</span>[<span class="hljs-number">50</span>];<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-built_in">Derived</span>()<br>    &#123;<br>        std::cout &lt;&lt; <span class="hljs-string">&quot;Construct Derived.\n&quot;</span>;<br>    &#125;;<br>    ~<span class="hljs-built_in">Derived</span>()<br>    &#123;<br>        std::cout &lt;&lt; <span class="hljs-string">&quot;Destruct Derived.\n&quot;</span>;<br>    &#125;;<br>&#125;;<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    std::cout &lt;&lt; <span class="hljs-string">&quot;Base class: \n&quot;</span>;<br>    Base* base = <span class="hljs-keyword">new</span> Base;<br>    <span class="hljs-keyword">delete</span> base;<br>    std::cout &lt;&lt; <span class="hljs-string">&quot;\n&quot;</span>;<br><br>    std::cout &lt;&lt; <span class="hljs-string">&quot;Derived class: \n&quot;</span>;<br>    Derived* derived = <span class="hljs-keyword">new</span> Derived;<br>    <span class="hljs-keyword">delete</span> derived;<br>    std::cout &lt;&lt; <span class="hljs-string">&quot;\n&quot;</span>;<br><br>    std::cout &lt;&lt; <span class="hljs-string">&quot;ploy: \n&quot;</span>;<br>    Base* ploy = <span class="hljs-keyword">new</span> Derived;<br>    <span class="hljs-keyword">delete</span> ploy;<br><br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>创建了一个基类<strong>Base</strong>和一个派生类<strong>Derived</strong>，其中<strong>Derived</strong>类中定义了一个动态数组，并在构造函数中对其进行初始化。(该数组占用的内存空间较大)<br>首先是分别创建了基类和派生类的对象，然后分别通过基类指针和派生类指针进行删除，都能正常释放内存。<br>但是对ploy指针进行删除时，由于没有实现虚析构函数，导致内存无法释放。<br>内存中残留着动态数组，导致内存泄露。<br>结果如下：</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs cmd">Base class:<br>Construct Base.<br>Destruct Base.<br><br>Derived class:<br>Construct Base.<br>Construct Derived.<br>Destruct Derived.<br>Destruct Base.<br><span class="hljs-function"></span><br><span class="hljs-function">ploy:</span><br><span class="hljs-function"><span class="hljs-title">Construct</span> <span class="hljs-title">Base</span>.</span><br><span class="hljs-function"><span class="hljs-title">Construct</span> <span class="hljs-title">Derived</span>.</span><br><span class="hljs-function"><span class="hljs-title">Destruct</span> <span class="hljs-title">Base</span>.</span><br></code></pre></td></tr></table></figure>
+<p>如果要彻底修复这个错误，需要把Base类的析构函数改成虚析构函数，除此之外，为了更好的可读性，在派生类<strong>Derived</strong>中，最好也把析构函数加上<strong>override</strong>关键词。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;iostream&gt;</span></span><br><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Base</span><br>&#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-built_in">Base</span>()<br>    &#123;<br>        std::cout &lt;&lt; <span class="hljs-string">&quot;Construct Base.\n&quot;</span>;<br>    &#125;;<br>    <span class="hljs-keyword">virtual</span> ~<span class="hljs-built_in">Base</span>()<span class="hljs-comment">//声明为虚析构函数</span><br>    &#123;<br>        std::cout &lt;&lt; <span class="hljs-string">&quot;Destruct Base.\n&quot;</span>;<br>    &#125;;<br>&#125;;<br><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Derived</span>:<span class="hljs-keyword">public</span> Base<br>&#123;<br><span class="hljs-keyword">private</span>:<br>    <span class="hljs-type">int</span>* a = <span class="hljs-keyword">new</span> <span class="hljs-type">int</span>[<span class="hljs-number">50</span>];<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-built_in">Derived</span>()<br>    &#123;<br>        std::cout &lt;&lt; <span class="hljs-string">&quot;Construct Derived.\n&quot;</span>;<br>    &#125;;<br>    ~<span class="hljs-built_in">Derived</span>() <span class="hljs-keyword">override</span><span class="hljs-comment">//加上override</span><br>    &#123;<br>        std::cout &lt;&lt; <span class="hljs-string">&quot;Destruct Derived.\n&quot;</span>;<br>    &#125;;<br>&#125;;<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    std::cout &lt;&lt; <span class="hljs-string">&quot;Base class: \n&quot;</span>;<br>    Base* base = <span class="hljs-keyword">new</span> Base;<br>    <span class="hljs-keyword">delete</span> base;<br>    std::cout &lt;&lt; <span class="hljs-string">&quot;\n&quot;</span>;<br><br>    std::cout &lt;&lt; <span class="hljs-string">&quot;Derived class: \n&quot;</span>;<br>    Derived* derived = <span class="hljs-keyword">new</span> Derived;<br>    <span class="hljs-keyword">delete</span> derived;<br>    std::cout &lt;&lt; <span class="hljs-string">&quot;\n&quot;</span>;<br><br>    std::cout &lt;&lt; <span class="hljs-string">&quot;ploy: \n&quot;</span>;<br>    Base* ploy = <span class="hljs-keyword">new</span> Derived;<br>    <span class="hljs-keyword">delete</span> ploy;<br><br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
 
                 
               </div>
@@ -323,8 +299,6 @@
       
         <a href="/tags/c/" class="print-no-link">#c++</a>
       
-        <a href="/tags/%E4%BC%98%E5%8C%96/" class="print-no-link">#优化</a>
-      
     </div>
   
 </div>
@@ -335,8 +309,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>vector使用优化</div>
-      <div>http://humertank0.github.io/2023/12/05/vector使用优化/</div>
+      <div>虚析构函数</div>
+      <div>http://humertank0.github.io/2023/12/09/虚析构函数/</div>
     </div>
     <div class="license-meta">
       
@@ -348,7 +322,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年12月5日</div>
+          <div>2023年12月9日</div>
         </div>
       
       
@@ -380,18 +354,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/12/09/%E8%99%9A%E6%9E%90%E6%9E%84%E5%87%BD%E6%95%B0/" title="虚析构函数">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">虚析构函数</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/12/04/%E6%8C%87%E9%92%88%E8%BF%90%E7%AE%97%E7%AC%A6/" title="指针运算符">
-                        <span class="hidden-mobile">指针运算符</span>
+                      <a href="/2023/12/05/vector%E4%BD%BF%E7%94%A8%E4%BC%98%E5%8C%96/" title="vector使用优化">
+                        <span class="hidden-mobile">vector使用优化</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
