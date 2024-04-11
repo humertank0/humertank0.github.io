@@ -16,26 +16,26 @@
   <meta name="author" content="mirage">
   <meta name="keywords" content="">
   
-    <meta name="description" content="今天在写类的时候，遇到了内存泄露问题，原因是没有写虚析构函数，导致内存无法释放。 虚析构函数是一个在 C++ 中的重要概念，用于正确地释放多态类对象的资源。虚析构函数通常在基类中声明，并在继承类中进行实现。当通过基类指针或引用删除一个派生类对象时，使用虚析构函数可以确保正确调用派生类的析构函数，从而释放所有相关资源。 具体实现如下： 12345678910111213141516171819202">
+    <meta name="description" content="问题背景gpt帮忙润色中文论文时，直接输入指令“润色并降重：”效果一般，一方面是句子的润色程度不够，一方面是输出结果使用起来不方便，一大段修改后的文字还需要与论文一一比对。 解决方法中文论文润色提示词以下是一篇学术论文中的一段话。打磨文字以符合学术风格，提高拼写、语法、清晰度、简洁性和整体可读性。必要时重写整个句子。此外，在markdown表格中列出所有修改并解释修改的原因： 英文论文润色提示词B">
 <meta property="og:type" content="article">
-<meta property="og:title" content="虚析构函数">
-<meta property="og:url" content="http://humertank0.github.io/2023/12/09/%E8%99%9A%E6%9E%90%E6%9E%84%E5%87%BD%E6%95%B0/index.html">
+<meta property="og:title" content="gpt论文润色专版">
+<meta property="og:url" content="http://humertank0.github.io/2024/04/11/gpt%E8%AE%BA%E6%96%87%E6%B6%A6%E8%89%B2%E4%B8%93%E7%89%88/index.html">
 <meta property="og:site_name" content="Mirage">
-<meta property="og:description" content="今天在写类的时候，遇到了内存泄露问题，原因是没有写虚析构函数，导致内存无法释放。 虚析构函数是一个在 C++ 中的重要概念，用于正确地释放多态类对象的资源。虚析构函数通常在基类中声明，并在继承类中进行实现。当通过基类指针或引用删除一个派生类对象时，使用虚析构函数可以确保正确调用派生类的析构函数，从而释放所有相关资源。 具体实现如下： 12345678910111213141516171819202">
+<meta property="og:description" content="问题背景gpt帮忙润色中文论文时，直接输入指令“润色并降重：”效果一般，一方面是句子的润色程度不够，一方面是输出结果使用起来不方便，一大段修改后的文字还需要与论文一一比对。 解决方法中文论文润色提示词以下是一篇学术论文中的一段话。打磨文字以符合学术风格，提高拼写、语法、清晰度、简洁性和整体可读性。必要时重写整个句子。此外，在markdown表格中列出所有修改并解释修改的原因： 英文论文润色提示词B">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/humertank0/picx-images-hosting@master/20231209/b4c69d4d-d2a1-47b7-a7f6-a9fac2bc4b9c.1z240maihgo0.webp">
-<meta property="article:published_time" content="2023-12-09T11:28:00.000Z">
-<meta property="article:modified_time" content="2023-12-09T12:09:50.220Z">
+<meta property="og:image" content="https://github.com/humertank0/picx-images-hosting/raw/master/Designer.1e8dz083of.webp">
+<meta property="article:published_time" content="2024-04-11T08:10:59.000Z">
+<meta property="article:modified_time" content="2024-04-11T09:52:09.936Z">
 <meta property="article:author" content="mirage">
-<meta property="article:tag" content="c++">
+<meta property="article:tag" content="GPT">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/humertank0/picx-images-hosting@master/20231209/b4c69d4d-d2a1-47b7-a7f6-a9fac2bc4b9c.1z240maihgo0.webp">
+<meta name="twitter:image" content="https://github.com/humertank0/picx-images-hosting/raw/master/Designer.1e8dz083of.webp">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>虚析构函数 - Mirage</title>
+  <title>gpt论文润色专版 - Mirage</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -201,7 +201,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="虚析构函数"></span>
+            <span id="subtitle" data-typed-text="gpt论文润色专版"></span>
           
         </div>
 
@@ -212,8 +212,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-12-09 19:28" pubdate>
-          2023年12月9日 晚上
+        <time datetime="2024-04-11 16:10" pubdate>
+          2024年4月11日 下午
         </time>
       </span>
     
@@ -224,7 +224,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2.2k 字
+          508 字
         
       </span>
     
@@ -235,7 +235,7 @@
         
         
         
-          19 分钟
+          5 分钟
         
       </span>
     
@@ -272,19 +272,15 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">虚析构函数</h1>
+            <h1 id="seo-header">gpt论文润色专版</h1>
             
             
               <div class="markdown-body">
                 
-                <p>今天在写类的时候，遇到了内存泄露问题，原因是没有写虚析构函数，导致内存无法释放。</p>
-<p>虚析构函数是一个在 C++ 中的重要概念，用于正确地释放多态类对象的资源。虚析构函数通常在基类中声明，并在继承类中进行实现。当通过基类指针或引用删除一个派生类对象时，使用虚析构函数可以确保正确调用派生类的析构函数，从而释放所有相关资源。</p>
-<p>具体实现如下：</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;iostream&gt;</span></span><br><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Base</span><br>&#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-built_in">Base</span>()<br>    &#123;<br>        std::cout &lt;&lt; <span class="hljs-string">&quot;Construct Base.\n&quot;</span>;<br>    &#125;;<br>    ~<span class="hljs-built_in">Base</span>()<br>    &#123;<br>        std::cout &lt;&lt; <span class="hljs-string">&quot;Destruct Base.\n&quot;</span>;<br>    &#125;;<br>&#125;;<br><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Derived</span>:<span class="hljs-keyword">public</span> Base<br>&#123;<br><span class="hljs-keyword">private</span>:<br>    <span class="hljs-type">int</span>* a = <span class="hljs-keyword">new</span> <span class="hljs-type">int</span>[<span class="hljs-number">50</span>];<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-built_in">Derived</span>()<br>    &#123;<br>        std::cout &lt;&lt; <span class="hljs-string">&quot;Construct Derived.\n&quot;</span>;<br>    &#125;;<br>    ~<span class="hljs-built_in">Derived</span>()<br>    &#123;<br>        std::cout &lt;&lt; <span class="hljs-string">&quot;Destruct Derived.\n&quot;</span>;<br>    &#125;;<br>&#125;;<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    std::cout &lt;&lt; <span class="hljs-string">&quot;Base class: \n&quot;</span>;<br>    Base* base = <span class="hljs-keyword">new</span> Base;<br>    <span class="hljs-keyword">delete</span> base;<br>    std::cout &lt;&lt; <span class="hljs-string">&quot;\n&quot;</span>;<br><br>    std::cout &lt;&lt; <span class="hljs-string">&quot;Derived class: \n&quot;</span>;<br>    Derived* derived = <span class="hljs-keyword">new</span> Derived;<br>    <span class="hljs-keyword">delete</span> derived;<br>    std::cout &lt;&lt; <span class="hljs-string">&quot;\n&quot;</span>;<br><br>    std::cout &lt;&lt; <span class="hljs-string">&quot;ploy: \n&quot;</span>;<br>    Base* ploy = <span class="hljs-keyword">new</span> Derived;<br>    <span class="hljs-keyword">delete</span> ploy;<br><br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
-<p>创建了一个基类<strong>Base</strong>和一个派生类<strong>Derived</strong>，其中<strong>Derived</strong>类中定义了一个动态数组，并在构造函数中对其进行初始化。(该数组占用的内存空间较大)<br>首先是分别创建了基类和派生类的对象，然后分别通过基类指针和派生类指针进行删除，都能正常释放内存。<br>但是对ploy指针进行删除时，由于没有实现虚析构函数，导致内存无法释放。<br>内存中残留着动态数组，导致内存泄露。<br>结果如下：</p>
-<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs cmd">Base class:<br>Construct Base.<br>Destruct Base.<br><br>Derived class:<br>Construct Base.<br>Construct Derived.<br>Destruct Derived.<br>Destruct Base.<br><span class="hljs-function"></span><br><span class="hljs-function">ploy:</span><br><span class="hljs-function"><span class="hljs-title">Construct</span> <span class="hljs-title">Base</span>.</span><br><span class="hljs-function"><span class="hljs-title">Construct</span> <span class="hljs-title">Derived</span>.</span><br><span class="hljs-function"><span class="hljs-title">Destruct</span> <span class="hljs-title">Base</span>.</span><br></code></pre></td></tr></table></figure>
-<p>如果要彻底修复这个错误，需要把Base类的析构函数改成虚析构函数，除此之外，为了更好的可读性，在派生类<strong>Derived</strong>中，最好也把析构函数加上<strong>override</strong>关键词。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;iostream&gt;</span></span><br><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Base</span><br>&#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-built_in">Base</span>()<br>    &#123;<br>        std::cout &lt;&lt; <span class="hljs-string">&quot;Construct Base.\n&quot;</span>;<br>    &#125;;<br>    <span class="hljs-keyword">virtual</span> ~<span class="hljs-built_in">Base</span>()<span class="hljs-comment">//声明为虚析构函数</span><br>    &#123;<br>        std::cout &lt;&lt; <span class="hljs-string">&quot;Destruct Base.\n&quot;</span>;<br>    &#125;;<br>&#125;;<br><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Derived</span>:<span class="hljs-keyword">public</span> Base<br>&#123;<br><span class="hljs-keyword">private</span>:<br>    <span class="hljs-type">int</span>* a = <span class="hljs-keyword">new</span> <span class="hljs-type">int</span>[<span class="hljs-number">50</span>];<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-built_in">Derived</span>()<br>    &#123;<br>        std::cout &lt;&lt; <span class="hljs-string">&quot;Construct Derived.\n&quot;</span>;<br>    &#125;;<br>    ~<span class="hljs-built_in">Derived</span>() <span class="hljs-keyword">override</span><span class="hljs-comment">//加上override</span><br>    &#123;<br>        std::cout &lt;&lt; <span class="hljs-string">&quot;Destruct Derived.\n&quot;</span>;<br>    &#125;;<br>&#125;;<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    std::cout &lt;&lt; <span class="hljs-string">&quot;Base class: \n&quot;</span>;<br>    Base* base = <span class="hljs-keyword">new</span> Base;<br>    <span class="hljs-keyword">delete</span> base;<br>    std::cout &lt;&lt; <span class="hljs-string">&quot;\n&quot;</span>;<br><br>    std::cout &lt;&lt; <span class="hljs-string">&quot;Derived class: \n&quot;</span>;<br>    Derived* derived = <span class="hljs-keyword">new</span> Derived;<br>    <span class="hljs-keyword">delete</span> derived;<br>    std::cout &lt;&lt; <span class="hljs-string">&quot;\n&quot;</span>;<br><br>    std::cout &lt;&lt; <span class="hljs-string">&quot;ploy: \n&quot;</span>;<br>    Base* ploy = <span class="hljs-keyword">new</span> Derived;<br>    <span class="hljs-keyword">delete</span> ploy;<br><br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+                <h1 id="问题背景"><a href="#问题背景" class="headerlink" title="问题背景"></a>问题背景</h1><p>gpt帮忙润色中文论文时，直接输入指令“润色并降重：”效果一般，一方面是句子的润色程度不够，一方面是输出结果使用起来不方便，一大段修改后的文字还需要与论文一一比对。</p>
+<h1 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h1><h2 id="中文论文润色提示词"><a href="#中文论文润色提示词" class="headerlink" title="中文论文润色提示词"></a>中文论文润色提示词</h2><p>以下是一篇学术论文中的一段话。打磨文字以符合学术风格，提高拼写、语法、清晰度、简洁性和整体可读性。必要时重写整个句子。此外，在markdown表格中列出所有修改并解释修改的原因：</p>
+<h2 id="英文论文润色提示词"><a href="#英文论文润色提示词" class="headerlink" title="英文论文润色提示词"></a>英文论文润色提示词</h2><p>Below is a paragraph from an academic paper. Polish the writing to meet the academic style, improve the spelling, grammar, clarity, concision and overall readability. When necessary, rewrite the whole sentence. Furthermore list all modification and explain the reasons to do so in markdown table : </p>
+<h1 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h1><p>通过这种方式生成的回复会显示为markdown格式，分为三栏，gpt会对修改的句子专门标记出来，并给出修改的理由。</p>
 
                 
               </div>
@@ -297,7 +293,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/c/" class="print-no-link">#c++</a>
+        <a href="/tags/GPT/" class="print-no-link">#GPT</a>
       
     </div>
   
@@ -309,8 +305,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>虚析构函数</div>
-      <div>http://humertank0.github.io/2023/12/09/虚析构函数/</div>
+      <div>gpt论文润色专版</div>
+      <div>http://humertank0.github.io/2024/04/11/gpt论文润色专版/</div>
     </div>
     <div class="license-meta">
       
@@ -322,7 +318,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年12月9日</div>
+          <div>2024年4月11日</div>
         </div>
       
       
@@ -354,18 +350,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/04/11/gpt%E8%AE%BA%E6%96%87%E6%B6%A6%E8%89%B2%E4%B8%93%E7%89%88/" title="gpt论文润色专版">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">gpt论文润色专版</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/12/05/vector%E4%BD%BF%E7%94%A8%E4%BC%98%E5%8C%96/" title="vector使用优化">
-                        <span class="hidden-mobile">vector使用优化</span>
+                      <a href="/2023/12/09/%E8%99%9A%E6%9E%90%E6%9E%84%E5%87%BD%E6%95%B0/" title="虚析构函数">
+                        <span class="hidden-mobile">虚析构函数</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

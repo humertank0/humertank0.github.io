@@ -4,6 +4,25 @@
   
   
   <entry>
+    <title>gpt论文润色专版</title>
+    <link href="/2024/04/11/gpt%E8%AE%BA%E6%96%87%E6%B6%A6%E8%89%B2%E4%B8%93%E7%89%88/"/>
+    <url>/2024/04/11/gpt%E8%AE%BA%E6%96%87%E6%B6%A6%E8%89%B2%E4%B8%93%E7%89%88/</url>
+    
+    <content type="html"><![CDATA[<h1 id="问题背景"><a href="#问题背景" class="headerlink" title="问题背景"></a>问题背景</h1><p>gpt帮忙润色中文论文时，直接输入指令“润色并降重：”效果一般，一方面是句子的润色程度不够，一方面是输出结果使用起来不方便，一大段修改后的文字还需要与论文一一比对。</p><h1 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h1><h2 id="中文论文润色提示词"><a href="#中文论文润色提示词" class="headerlink" title="中文论文润色提示词"></a>中文论文润色提示词</h2><p>以下是一篇学术论文中的一段话。打磨文字以符合学术风格，提高拼写、语法、清晰度、简洁性和整体可读性。必要时重写整个句子。此外，在markdown表格中列出所有修改并解释修改的原因：</p><h2 id="英文论文润色提示词"><a href="#英文论文润色提示词" class="headerlink" title="英文论文润色提示词"></a>英文论文润色提示词</h2><p>Below is a paragraph from an academic paper. Polish the writing to meet the academic style, improve the spelling, grammar, clarity, concision and overall readability. When necessary, rewrite the whole sentence. Furthermore list all modification and explain the reasons to do so in markdown table : </p><h1 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h1><p>通过这种方式生成的回复会显示为markdown格式，分为三栏，gpt会对修改的句子专门标记出来，并给出修改的理由。</p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>GPT</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>虚析构函数</title>
     <link href="/2023/12/09/%E8%99%9A%E6%9E%90%E6%9E%84%E5%87%BD%E6%95%B0/"/>
     <url>/2023/12/09/%E8%99%9A%E6%9E%90%E6%9E%84%E5%87%BD%E6%95%B0/</url>
