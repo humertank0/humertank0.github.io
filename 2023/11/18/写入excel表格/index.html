@@ -12,20 +12,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
   <meta name="theme-color" content="#2f4154">
   <meta name="author" content="mirage">
   <meta name="keywords" content="">
   
-    <meta name="description" content="将数据写入 excel 表格用的是 xlrd 和 xlwt，由于需要频繁开关xls文件，不适合连续写入，建议 openpyxl 库，后续会进行更新。 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061# coding&#x3D;UTF">
+    <meta name="description" content="将数据写入 excel 表格用的是 xlrd 和 xlwt，由于需要频繁开关xls文件，不适合连续写入，建议 openpyxl 库，后续会进行更新。 # coding&#x3D;UTF-8 import xlrd import xlwt from xlutils.copy import copy     def write_excel_xls(path, sheet_name, value):     in">
 <meta property="og:type" content="article">
 <meta property="og:title" content="写入excel表格">
 <meta property="og:url" content="http://humertank0.github.io/2023/11/18/%E5%86%99%E5%85%A5excel%E8%A1%A8%E6%A0%BC/index.html">
 <meta property="og:site_name" content="Mirage">
-<meta property="og:description" content="将数据写入 excel 表格用的是 xlrd 和 xlwt，由于需要频繁开关xls文件，不适合连续写入，建议 openpyxl 库，后续会进行更新。 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061# coding&#x3D;UTF">
+<meta property="og:description" content="将数据写入 excel 表格用的是 xlrd 和 xlwt，由于需要频繁开关xls文件，不适合连续写入，建议 openpyxl 库，后续会进行更新。 # coding&#x3D;UTF-8 import xlrd import xlwt from xlutils.copy import copy     def write_excel_xls(path, sheet_name, value):     in">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://github.com/humertank0/picx-images-hosting/raw/master/20240415/3ad97723-e2d8-4ead-beba-2aef96ca8ba8.58h5ns3co2.webp">
 <meta property="article:published_time" content="2023-11-18T08:48:29.000Z">
-<meta property="article:modified_time" content="2024-04-15T10:05:52.220Z">
+<meta property="article:modified_time" content="2024-04-15T10:05:52.000Z">
 <meta property="article:author" content="mirage">
 <meta property="article:tag" content="python">
 <meta name="twitter:card" content="summary_large_image">
@@ -73,7 +75,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"humertank0.github.io","root":"/","version":"1.9.5","typing":{"enable":true,"typeSpeed":120,"cursorChar":"_","loop":true,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
+    var CONFIG = {"hostname":"humertank0.github.io","root":"/","version":"1.9.5","typing":{"enable":true,"typeSpeed":120,"cursorChar":"_","loop":true,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"python"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -86,7 +88,7 @@
 
 
   
-<meta name="generator" content="Hexo 6.3.0"></head>
+<meta name="generator" content="Hexo 7.3.0"></head>
 
 
 <body>
@@ -99,7 +101,7 @@
   <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand" href="/">
-      <strong>humertank&#39;s blog</strong>
+      <strong>junke wang&#39;s blog</strong>
     </a>
 
     <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
@@ -195,7 +197,7 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('https://jsd.cdn.zzko.cn/gh/humertank0/picx-images-hosting@master/20240415/wallhaven-kxzr2d_2560x1440.58h5ns3efq.webp') no-repeat center center; background-size: cover;">
+     style="background: url('https://jsd.cdn.zzko.cn/gh/humertank0/picx-images-hosting@master/20250718/wallhaven-qzw7dl_3840x2160.5c19tnlhny.webp') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
@@ -224,7 +226,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2.2k 字
+          2.1k 字
         
       </span>
     
@@ -235,7 +237,7 @@
         
         
         
-          19 分钟
+          18 分钟
         
       </span>
     
@@ -278,7 +280,67 @@
               <div class="markdown-body">
                 
                 <h1 id="将数据写入-excel-表格"><a href="#将数据写入-excel-表格" class="headerlink" title="将数据写入 excel 表格"></a>将数据写入 excel 表格</h1><p>用的是 xlrd 和 xlwt，由于需要频繁开关xls文件，不适合连续写入，建议 <strong>openpyxl</strong> 库，后续会进行更新。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># coding=UTF-8</span><br><span class="hljs-keyword">import</span> xlrd<br><span class="hljs-keyword">import</span> xlwt<br><span class="hljs-keyword">from</span> xlutils.copy <span class="hljs-keyword">import</span> copy<br> <br> <br><span class="hljs-keyword">def</span> <span class="hljs-title function_">write_excel_xls</span>(<span class="hljs-params">path, sheet_name, value</span>):<br>    index = <span class="hljs-built_in">len</span>(value)  <span class="hljs-comment"># 获取需要写入数据的行数</span><br>    workbook = xlwt.Workbook()  <span class="hljs-comment"># 新建一个工作簿</span><br>    sheet = workbook.add_sheet(sheet_name)  <span class="hljs-comment"># 在工作簿中新建一个表格</span><br>    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">0</span>, index):<br>        <span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">0</span>, <span class="hljs-built_in">len</span>(value[i])):<br>            sheet.write(i, j, value[i][j])  <span class="hljs-comment"># 像表格中写入数据（对应的行和列）</span><br>    workbook.save(path)  <span class="hljs-comment"># 保存工作簿</span><br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;xls格式表格写入数据成功！&quot;</span>)<br> <br> <br><span class="hljs-keyword">def</span> <span class="hljs-title function_">write_excel_xls_append</span>(<span class="hljs-params">path, value</span>):<br>    index = <span class="hljs-built_in">len</span>(value)  <span class="hljs-comment"># 获取需要写入数据的行数</span><br>    workbook = xlrd.open_workbook(path)  <span class="hljs-comment"># 打开工作簿</span><br>    sheets = workbook.sheet_names()  <span class="hljs-comment"># 获取工作簿中的所有表格</span><br>    worksheet = workbook.sheet_by_name(sheets[<span class="hljs-number">0</span>])  <span class="hljs-comment"># 获取工作簿中所有表格中的的第一个表格</span><br>    rows_old = worksheet.nrows  <span class="hljs-comment"># 获取表格中已存在的数据的行数</span><br>    new_workbook = copy(workbook)  <span class="hljs-comment"># 将xlrd对象拷贝转化为xlwt对象</span><br>    new_worksheet = new_workbook.get_sheet(<span class="hljs-number">0</span>)  <span class="hljs-comment"># 获取转化后工作簿中的第一个表格</span><br>    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">0</span>, index):<br>        <span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">0</span>, <span class="hljs-built_in">len</span>(value[i])):<br>            new_worksheet.write(i+rows_old, j, value[i][j])  <span class="hljs-comment"># 追加写入数据，注意是从i+rows_old行开始写入</span><br>    new_workbook.save(path)  <span class="hljs-comment"># 保存工作簿</span><br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;xls格式表格【追加】写入数据成功！&quot;</span>)<br> <br> <br><span class="hljs-keyword">def</span> <span class="hljs-title function_">read_excel_xls</span>(<span class="hljs-params">path</span>):<br>    workbook = xlrd.open_workbook(path)  <span class="hljs-comment"># 打开工作簿</span><br>    sheets = workbook.sheet_names()  <span class="hljs-comment"># 获取工作簿中的所有表格</span><br>    worksheet = workbook.sheet_by_name(sheets[<span class="hljs-number">0</span>])  <span class="hljs-comment"># 获取工作簿中所有表格中的的第一个表格</span><br>    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">0</span>, worksheet.nrows):<br>        <span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">0</span>, worksheet.ncols):<br>            <span class="hljs-built_in">print</span>(worksheet.cell_value(i, j), <span class="hljs-string">&quot;\t&quot;</span>, end=<span class="hljs-string">&quot;&quot;</span>)  <span class="hljs-comment"># 逐行逐列读取数据</span><br>        <span class="hljs-built_in">print</span>()<br> <br> <br>book_name_xls = <span class="hljs-string">&#x27;xls格式测试工作簿.xls&#x27;</span><br> <br>sheet_name_xls = <span class="hljs-string">&#x27;xls格式测试表&#x27;</span><br> <br>value_title = [[<span class="hljs-string">&quot;姓名&quot;</span>, <span class="hljs-string">&quot;性别&quot;</span>, <span class="hljs-string">&quot;年龄&quot;</span>, <span class="hljs-string">&quot;城市&quot;</span>, <span class="hljs-string">&quot;职业&quot;</span>],]<br> <br>value1 = [[<span class="hljs-string">&quot;张三&quot;</span>, <span class="hljs-string">&quot;男&quot;</span>, <span class="hljs-string">&quot;19&quot;</span>, <span class="hljs-string">&quot;杭州&quot;</span>, <span class="hljs-string">&quot;研发工程师&quot;</span>],<br>          [<span class="hljs-string">&quot;李四&quot;</span>, <span class="hljs-string">&quot;男&quot;</span>, <span class="hljs-string">&quot;22&quot;</span>, <span class="hljs-string">&quot;北京&quot;</span>, <span class="hljs-string">&quot;医生&quot;</span>],<br>          [<span class="hljs-string">&quot;王五&quot;</span>, <span class="hljs-string">&quot;女&quot;</span>, <span class="hljs-string">&quot;33&quot;</span>, <span class="hljs-string">&quot;珠海&quot;</span>, <span class="hljs-string">&quot;出租车司机&quot;</span>],]<br> <br>value2 = [[<span class="hljs-string">&quot;Tom&quot;</span>, <span class="hljs-string">&quot;男&quot;</span>, <span class="hljs-string">&quot;21&quot;</span>, <span class="hljs-string">&quot;西安&quot;</span>, <span class="hljs-string">&quot;测试工程师&quot;</span>],<br>          [<span class="hljs-string">&quot;Jones&quot;</span>, <span class="hljs-string">&quot;女&quot;</span>, <span class="hljs-string">&quot;34&quot;</span>, <span class="hljs-string">&quot;上海&quot;</span>, <span class="hljs-string">&quot;产品经理&quot;</span>],<br>          [<span class="hljs-string">&quot;Cat&quot;</span>, <span class="hljs-string">&quot;女&quot;</span>, <span class="hljs-string">&quot;56&quot;</span>, <span class="hljs-string">&quot;上海&quot;</span>, <span class="hljs-string">&quot;教师&quot;</span>],]<br> <br> <br>write_excel_xls(book_name_xls, sheet_name_xls, value_title)<br>write_excel_xls_append(book_name_xls, value1)<br>write_excel_xls_append(book_name_xls, value2)<br>read_excel_xls(book_name_xls)<br></code></pre></td></tr></table></figure>
+<div class="code-wrapper"><pre><code class="hljs python"><span class="hljs-comment"># coding=UTF-8</span>
+<span class="hljs-keyword">import</span> xlrd
+<span class="hljs-keyword">import</span> xlwt
+<span class="hljs-keyword">from</span> xlutils.copy <span class="hljs-keyword">import</span> copy
+ 
+ 
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">write_excel_xls</span>(<span class="hljs-params">path, sheet_name, value</span>):
+    index = <span class="hljs-built_in">len</span>(value)  <span class="hljs-comment"># 获取需要写入数据的行数</span>
+    workbook = xlwt.Workbook()  <span class="hljs-comment"># 新建一个工作簿</span>
+    sheet = workbook.add_sheet(sheet_name)  <span class="hljs-comment"># 在工作簿中新建一个表格</span>
+    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">0</span>, index):
+        <span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">0</span>, <span class="hljs-built_in">len</span>(value[i])):
+            sheet.write(i, j, value[i][j])  <span class="hljs-comment"># 像表格中写入数据（对应的行和列）</span>
+    workbook.save(path)  <span class="hljs-comment"># 保存工作簿</span>
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;xls格式表格写入数据成功！&quot;</span>)
+ 
+ 
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">write_excel_xls_append</span>(<span class="hljs-params">path, value</span>):
+    index = <span class="hljs-built_in">len</span>(value)  <span class="hljs-comment"># 获取需要写入数据的行数</span>
+    workbook = xlrd.open_workbook(path)  <span class="hljs-comment"># 打开工作簿</span>
+    sheets = workbook.sheet_names()  <span class="hljs-comment"># 获取工作簿中的所有表格</span>
+    worksheet = workbook.sheet_by_name(sheets[<span class="hljs-number">0</span>])  <span class="hljs-comment"># 获取工作簿中所有表格中的的第一个表格</span>
+    rows_old = worksheet.nrows  <span class="hljs-comment"># 获取表格中已存在的数据的行数</span>
+    new_workbook = copy(workbook)  <span class="hljs-comment"># 将xlrd对象拷贝转化为xlwt对象</span>
+    new_worksheet = new_workbook.get_sheet(<span class="hljs-number">0</span>)  <span class="hljs-comment"># 获取转化后工作簿中的第一个表格</span>
+    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">0</span>, index):
+        <span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">0</span>, <span class="hljs-built_in">len</span>(value[i])):
+            new_worksheet.write(i+rows_old, j, value[i][j])  <span class="hljs-comment"># 追加写入数据，注意是从i+rows_old行开始写入</span>
+    new_workbook.save(path)  <span class="hljs-comment"># 保存工作簿</span>
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;xls格式表格【追加】写入数据成功！&quot;</span>)
+ 
+ 
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">read_excel_xls</span>(<span class="hljs-params">path</span>):
+    workbook = xlrd.open_workbook(path)  <span class="hljs-comment"># 打开工作簿</span>
+    sheets = workbook.sheet_names()  <span class="hljs-comment"># 获取工作簿中的所有表格</span>
+    worksheet = workbook.sheet_by_name(sheets[<span class="hljs-number">0</span>])  <span class="hljs-comment"># 获取工作簿中所有表格中的的第一个表格</span>
+    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">0</span>, worksheet.nrows):
+        <span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">0</span>, worksheet.ncols):
+            <span class="hljs-built_in">print</span>(worksheet.cell_value(i, j), <span class="hljs-string">&quot;\t&quot;</span>, end=<span class="hljs-string">&quot;&quot;</span>)  <span class="hljs-comment"># 逐行逐列读取数据</span>
+        <span class="hljs-built_in">print</span>()
+ 
+ 
+book_name_xls = <span class="hljs-string">&#x27;xls格式测试工作簿.xls&#x27;</span>
+ 
+sheet_name_xls = <span class="hljs-string">&#x27;xls格式测试表&#x27;</span>
+ 
+value_title = [[<span class="hljs-string">&quot;姓名&quot;</span>, <span class="hljs-string">&quot;性别&quot;</span>, <span class="hljs-string">&quot;年龄&quot;</span>, <span class="hljs-string">&quot;城市&quot;</span>, <span class="hljs-string">&quot;职业&quot;</span>],]
+ 
+value1 = [[<span class="hljs-string">&quot;张三&quot;</span>, <span class="hljs-string">&quot;男&quot;</span>, <span class="hljs-string">&quot;19&quot;</span>, <span class="hljs-string">&quot;杭州&quot;</span>, <span class="hljs-string">&quot;研发工程师&quot;</span>],
+          [<span class="hljs-string">&quot;李四&quot;</span>, <span class="hljs-string">&quot;男&quot;</span>, <span class="hljs-string">&quot;22&quot;</span>, <span class="hljs-string">&quot;北京&quot;</span>, <span class="hljs-string">&quot;医生&quot;</span>],
+          [<span class="hljs-string">&quot;王五&quot;</span>, <span class="hljs-string">&quot;女&quot;</span>, <span class="hljs-string">&quot;33&quot;</span>, <span class="hljs-string">&quot;珠海&quot;</span>, <span class="hljs-string">&quot;出租车司机&quot;</span>],]
+ 
+value2 = [[<span class="hljs-string">&quot;Tom&quot;</span>, <span class="hljs-string">&quot;男&quot;</span>, <span class="hljs-string">&quot;21&quot;</span>, <span class="hljs-string">&quot;西安&quot;</span>, <span class="hljs-string">&quot;测试工程师&quot;</span>],
+          [<span class="hljs-string">&quot;Jones&quot;</span>, <span class="hljs-string">&quot;女&quot;</span>, <span class="hljs-string">&quot;34&quot;</span>, <span class="hljs-string">&quot;上海&quot;</span>, <span class="hljs-string">&quot;产品经理&quot;</span>],
+          [<span class="hljs-string">&quot;Cat&quot;</span>, <span class="hljs-string">&quot;女&quot;</span>, <span class="hljs-string">&quot;56&quot;</span>, <span class="hljs-string">&quot;上海&quot;</span>, <span class="hljs-string">&quot;教师&quot;</span>],]
+ 
+ 
+write_excel_xls(book_name_xls, sheet_name_xls, value_title)
+write_excel_xls_append(book_name_xls, value1)
+write_excel_xls_append(book_name_xls, value2)
+read_excel_xls(book_name_xls)</code></pre></div>
 
                 
               </div>
@@ -358,8 +420,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/11/18/%E5%AE%9E%E9%AA%8C%E8%AE%A1%E6%97%B6%E5%99%A8/" title="实验计时器">
-                        <span class="hidden-mobile">实验计时器</span>
+                      <a href="/2023/11/18/python%E5%91%BD%E5%90%8D%E8%A7%84%E8%8C%83/" title="python命名规范">
+                        <span class="hidden-mobile">python命名规范</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
